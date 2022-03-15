@@ -381,9 +381,17 @@ header .row .main-nav-bar .sign-up a {
 }
 
 /* slider css */
+.swiper-container .curve-rough {
+  width: 100%;
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+}
+
 .swiper-container .slidertext {
   text-align: left;
   width: 500px;
+  max-width: 100%;
   padding-left: 90px;
 }
 
@@ -414,11 +422,6 @@ header .row .main-nav-bar .sign-up a {
   background: #f3a901;
 }
 
-.swiper-container .curvy-image {
-  position: absolute;
-  bottom: 0;
-}
-
 /* responsive css */
 @media screen and (max-width: 992px) {
   li::after {
@@ -430,6 +433,29 @@ header .row .main-nav-bar .sign-up a {
   }
   .hamburger {
     display: block;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  .swiper-container {
+    height: 56vh;
+  }
+  .swiper-container .slidertext {
+    width: 253px;
+  }
+  .swiper-container .slidertext {
+    padding-left: 3%;
+  }
+  .swiper-container .slidertext h2 {
+    font-size: 15px;
+  }
+  .swiper-container .slidertext .link .btn_find_out {
+    font-size: 9px;
+    padding: 3px 20px !important;
+  }
+  .swiper-container .slidertext .link .btn_arrow {
+    font-size: 9px;
+    padding: 3px 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

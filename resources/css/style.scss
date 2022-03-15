@@ -288,9 +288,16 @@ header {
 
 /* slider css */
 .swiper-container {
+  .curve-rough {
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+  }
   .slidertext {
     text-align: left;
     width: 500px;
+    max-width: 100%;
     padding-left: 90px;
     .link {
       display: flex;
@@ -315,10 +322,6 @@ header {
       }
     }
   }
-  .curvy-image {
-    position: absolute;
-    bottom: 0;
-  }
 }
 
 /* responsive css */
@@ -332,5 +335,30 @@ header {
   }
   .hamburger {
     display: block;
+  }
+}
+
+@media screen and (max-width: 687px) {
+  .swiper-container {
+    height: 56vh;
+  }
+  .swiper-container .slidertext {
+    width: 253px;
+  }
+  .swiper-container .slidertext {
+    padding-left: 3%;
+    h2 {
+      font-size: 15px;
+    }
+    .link {
+      .btn_find_out {
+        font-size: 9px;
+        padding: 3px 20px !important;
+      }
+      .btn_arrow {
+        font-size: 9px;
+        padding: 3px 10px;
+      }
+    }
   }
 }
