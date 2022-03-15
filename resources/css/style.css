@@ -1,0 +1,319 @@
+@import url("../css/font.css");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Berthold;
+  overflow-x: hidden;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* global css */
+.container {
+  width: 87%;
+  margin: 0 auto;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+li {
+  margin-left: 32px;
+  position: relative;
+}
+
+li a {
+  color: #FFFFFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+li::after {
+  content: '';
+  position: absolute;
+  height: 18px;
+  width: 1.7px;
+  background: #FFFFFF;
+  right: -15px;
+}
+
+li:last-child:after {
+  content: none;
+}
+
+.search-bar {
+  position: relative;
+  margin-left: 25px;
+}
+
+.search-bar span {
+  position: absolute;
+  color: #FFFFFF;
+  left: 4px;
+  font-size: 20px;
+  top: 3px;
+}
+
+.search-bar input {
+  background-color: transparent;
+  outline: none;
+  border: 0.7px solid #FFFFFF;
+  border-radius: 11px;
+  padding: 2px 10px 2px 27px;
+  width: 161px;
+  color: #FFFFFF;
+}
+
+.search-bar input:focus {
+  border: .7px solid #999;
+}
+
+.sign-up {
+  margin-left: 25px;
+}
+
+.sign-up a {
+  background-color: #F3A901;
+  width: 155px;
+  display: inline-block;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+/* humburger css */
+.hamburger {
+  overflow: hidden;
+  position: fixed;
+  right: 20px;
+  top: 42px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 2px;
+  background-color: #060505;
+  margin: 5px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.hamburger .line2 {
+  width: 15px;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+}
+
+[data-pushbar-id] {
+  background: #000000;
+}
+
+.mobile-menu-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.mobile-menu-container .mobile-menu .top-nav-mobile {
+  margin-bottom: 20px;
+}
+
+.mobile-menu-container .mobile-menu .top-nav-mobile ul li {
+  margin: 7px auto;
+}
+
+.mobile-menu-container .mobile-menu .top-nav-mobile .search-bar {
+  margin-top: 18px;
+}
+
+.mobile-menu-container .mobile-menu .main-nav-bar-mobile {
+  margin-top: 10px;
+}
+
+.mobile-menu-container .mobile-menu .main-nav-bar-mobile ul li {
+  margin: 7px auto;
+}
+
+.mobile-menu-container .mobile-menu .main-nav-bar-mobile .sign-up {
+  margin-top: 18px;
+}
+
+/* top header css */
+.top-header {
+  width: 100%;
+  background-color: #A6192E;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-header .logo .logo-img {
+  position: absolute;
+  width: 110px;
+  top: 0;
+}
+
+.top-header .top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.top-header .top-nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-header .top-nav div .right-top-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/* header css */
+header {
+  background: #FFFFFF;
+  height: 69px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .row {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header .row .main-nav-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header .row .main-nav-bar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .row .main-nav-bar div ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .row .main-nav-bar div ul li a {
+  color: #3C3D3A;
+}
+
+header .row .main-nav-bar div ul li::after {
+  background: #3D3C3B;
+}
+
+header .row .main-nav-bar .sign-up {
+  margin-left: 25px;
+}
+
+header .row .main-nav-bar .sign-up a {
+  background-color: #F3A901;
+  width: 155px;
+  display: inline-block;
+  padding: 10px 10px;
+  text-align: center;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+/* responsive css */
+@media screen and (max-width: 992px) {
+  li::after {
+    content: none;
+  }
+  .top-header .top-nav,
+  header .main-nav-bar {
+    display: none !important;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+/*# sourceMappingURL=style.css.map */
