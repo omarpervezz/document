@@ -1,4 +1,14 @@
 @font-face {
-    font-family:Berthold;
-    src: url('../font/Helvetica.ttf');
+    font-family: Blockbe_woff;
+    src: url('../font/BlockBE-Condensed.woff');
+}
+
+@font-face {
+    font-family: HelveticaNeue_Bold;
+    src: url('../font/HelveticaNeue_Bold.woff');
+}
+
+@font-face {
+    font-family: Helvetica-Bold;
+    src: url('../font/Helvetica-Bold.woff');
 }
