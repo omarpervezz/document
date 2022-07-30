@@ -18,6 +18,9 @@ a.addEventListener('change', function () {
 
 const efficencyConverter = (value) => {
    // checking value
+  if(powerWatts.value == ''){
+   alert('please give your PSU power')
+  }else{
    switch (value) {
       case '81':
          divider = (150 / 0.81);
@@ -77,6 +80,7 @@ const efficencyConverter = (value) => {
       default:
          console.log('please give the value');
    }
+  }
 };
 
 function calculated(number) {
@@ -104,7 +108,7 @@ function removeSpace(e) {
    const flowting = ((parseFloat(filtering)) * 0.2) * 365;
    savingsYear = flowting;
    if(savingsYear){
-      resultOutput.innerHTML = savingsYear.toFixed(4);
+      resultOutput.innerHTML = `$${savingsYear.toFixed(4)}`;
    }else{
       resultOutput.innerHTML = 0;
    }
@@ -189,7 +193,7 @@ function do_conversion(conversionFactor) {
       tvalfrac1 = tvalfrac1 / gcd;
       tvalfrac2 = tvalfrac2 / gcd;
 
-      disptfrac = '<br /><b>Fraction :</b> <span style="color: #00f">' + ((tvalwhole == 0) ? '' : tvalwhole + ' ') + '<sup>' + tvalfrac1 + "</sup>/<small>" + tvalfrac2 + '</small></span> ' + to_plural + ' (' + to_abbr + ')';
+      disptfrac = '<br /><b>Fraction :</b> <span>' + ((tvalwhole == 0) ? '' : tvalwhole + ' ') + '<sup>' + tvalfrac1 + "</sup>/<small>" + tvalfrac2 + '</small></span> ' + to_plural + ' (' + to_abbr + ')';
    } else disptfrac = '';
 
    if (/[^\d\s\/\.]/.test(amtToConvert) || amtToConvert == "") var c_out = "";
