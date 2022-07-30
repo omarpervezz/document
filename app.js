@@ -75,7 +75,7 @@ const efficencyConverter = (value) => {
          calculated(fxn);
          break;
       default:
-         console.log('nothing here');
+         console.log('please give the value');
    }
 };
 
@@ -103,7 +103,11 @@ function removeSpace(e) {
    const filtering = splitingValue.join("").toString();
    const flowting = ((parseFloat(filtering)) * 0.2) * 365;
    savingsYear = flowting;
-   resultOutput.innerHTML = savingsYear.toFixed(4);
+   if(savingsYear){
+      resultOutput.innerHTML = savingsYear.toFixed(4);
+   }else{
+      resultOutput.innerHTML = 0;
+   }
 }
 
 
