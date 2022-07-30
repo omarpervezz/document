@@ -1,63 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PSU Project |</title>
-</head>
-<body>
-    
-     <div  style="width:30%;" class="calc">
-      <p id="errorid"></p>
-       <form id="frmcalculate">
-         <div class="psu-box">
-            <div class="psu-usage">
-             <div class="power">Power Usage of Computer</div>
-            <input type="number" id="powerWatts" value="124">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>PSU Project |</title>
+      <script type="text/javascript">
+         var from_abbr = "Wh";
+         var from_singular = "watt hour";
+         var from_plural = "watt hours";
+         var to_abbr = "kWh";
+         var to_singular = "kilowatt hour";
+         var to_plural = "kilowatt hours";
+      </script>
+   </head>
+   <body>
+      <div  style="width:30%;" class="calc">
+         <p id="errorid"></p>
+         <form id="frmcalculate">
+            <div class="psu-box">
+               <div class="psu-usage">
+                  <div class="power">Power Usage of Computer</div>
+                  <input type="number" id="powerWatts">
+               </div>
+               <div class="operation-time">
+                  <div class="text">Operation Time (Hours/Day)</div>
+                  <input type="number" id="hoursPerDay">
+               </div>
+               <div class="energy-cost">
+                  <div class="text">Energy Cost kWh</div>
+                  <input type="text" id="kwhPrice">
+               </div>
+               <div class="psu-efficency">
+                  <div class="psu">PSU Efficency</div>
+                  <select name="psu-efficency" id="efficency">
+                     <option value="efficency">select efficency</option>
+                     <option value="81">81%</option>
+                     <option value="82">82%</option>
+                     <option value="83">83%</option>
+                     <option value="84">84%</option>
+                     <option value="85">85%</option>
+                     <option value="86">86%</option>
+                     <option value="87">87%</option>
+                     <option value="88">88%</option>
+                     <option value="89">89%</option>
+                     <option value="90">90%</option>
+                     <option value="91">91%</option>
+                     <option value="92">92%</option>
+                     <option value="93">93%</option>
+                     <option value="94">94%</option>
+                     <option value="95">95%</option>
+                     <option value="96">96%</option>
+                     <option value="97">97%</option>
+                     <option value="98">98%</option>
+                     <option value="99">99%</option>
+                  </select>
+               </div>
+               <div class="result">
+                  <div class="result-text">Result:</div>
+                  <div class="result-info">1-year savings compared to PSU with 80% efficency </div>
+                  <div class="output" style="width: 60%;background:#000;color:white;text-align: center; height:40px;display: flex;align-items: center;justify-content: center;">$<span class="print-output">0</span></div>
+               </div>
             </div>
-            <div class="operation-time">
-             <div class="text">Operation Time (Hours/Day)</div>
-             <input type="number" id="hoursPerDay" value="10">
-            </div>
-            <div class="energy-cost">
-             <div class="text">Energy Cost kWH</div>
-              <input type="text" id="kwhPrice" value="0.21">
-            </div>
-            <div class="psu-efficency">
-             <div class="psu">PSU Efficency</div>
-               <select name="psu-efficency" id="efficency">
-                <option value="81" selected>81%</option>
-                <option value="82">82%</option>
-                <option value="83">83%</option>
-                <option value="84">84%</option>
-                <option value="85">85%</option>
-                <option value="86">86%</option>
-                <option value="87">87%</option>
-                <option value="88">88%</option>
-                <option value="89">89%</option>
-                <option value="90">90%</option>
-                <option value="91">91%</option>
-               </select>
-            </div>
-            <div class="result">
-               <input type="submit" class="button" value="Calculate" onclick="validateEntry(); energyCost(); event.preventDefault ? event.preventDefault() : event.returnValue = false;"/>
-               <input type="submit" class="button" value="Reset" onclick="formReset();"/>
-             <div class="result-text">Result:</div>
-             <div class="result-info">1-year savings compared to PSU with 80% efficency </div>
-            </div>
+         </form>
+      </div>
+      <!--what convert into kwh-->
+      <div class="rim" style="visibility:hidden ;opacity:0;">
+         <div class="jar new">
+            <form id="cform" action="/conversion/jscript.js">
+               <table border="0" width="100%" cellpadding="0" cellspacing="2" style="max-width:700px;margin:5px auto;">
+                  <tr>
+                     <td>
+                        <div id="c_output"></div>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td class="enter_txt">
+                        <b>Enter</b> Amount : <input type="text" name="amt" id="amt"/>
+                     </td>
+                  </tr>
+               </table>
+            </form>
          </div>
-       </form>
-     </div>
-     <div id="result">
-      <form id="frmresult" style="width:40vw;display: flex;background:#000; color:white;border:1px solid white;padding: 2rem 2rem;margin-top: 2rem;">
-      <p class='marpad'>Cost Per Hour: <input type="text" id="costPerHour" readonly="readonly"/></p>
-      <p class='marpad'>Cost Per Day: <input type="text" size="5" id="costPerDay" readonly="readonly"/></p>
-      <p class='marpad'>Cost Per Month: <input type="text" size="5" id="costPerMonth" readonly="readonly"/></p>
-      <p class='marpad'>Cost Per Year: <input type="text" size="5" id="costPerYear" readonly="readonly"/></p>
-      <p class='marpad'>kWh Per Day: <input type="text" size="5" id="kwhPerDay" readonly="readonly"/></p>
-      </form>
-   </div>
-    <script src="./app.js"></script>
-</body>
+      </div>
+      <script src="./app.js"></script>
+   </body>
 </html>
