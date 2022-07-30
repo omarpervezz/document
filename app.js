@@ -18,69 +18,109 @@ a.addEventListener('change', function () {
 
 const efficencyConverter = (value) => {
    // checking value
-  if(powerWatts.value == ''){
-   alert('please give your PSU power')
-  }else{
-   switch (value) {
-      case '81':
-         divider = (150 / 0.81);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '82':
-         divider = (150 / 0.82);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '83':
-         divider = (150 / 0.83);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '84':
-         divider = (150 / 0.84);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '85':
-         divider = (150 / 0.85);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '86':
-         divider = (150 / 0.86);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '87':
-         divider = (150 / 0.87);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '88':
-         divider = (150 / 0.88);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '89':
-         divider = (150 / 0.89);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '90':
-         divider = (150 / 0.9)
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      case '91':
-         divider = (150 / 0.91);
-         fxn = divider.toFixed(2);
-         calculated(fxn);
-         break;
-      default:
-         console.log('please give the value');
+   if (powerWatts.value == '') {
+      alert('please give your PSU power')
+   } else {
+      switch (value) {
+         case '81':
+            divider = (150 / 0.81);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '82':
+            divider = (150 / 0.82);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '83':
+            divider = (150 / 0.83);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '84':
+            divider = (150 / 0.84);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '85':
+            divider = (100 / 0.85);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '86':
+            divider = (150 / 0.86);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '87':
+            divider = (150 / 0.87);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '88':
+            divider = (150 / 0.88);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '89':
+            divider = (150 / 0.89);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '90':
+            divider = (150 / 0.9)
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '91':
+            divider = (150 / 0.91);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '92':
+            divider = (150 / 0.92);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '93':
+            divider = (150 / 0.93);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '94':
+            divider = (150 / 0.94);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '95':
+            divider = (150 / 0.95);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '96':
+            divider = (150 / 0.96);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '97':
+            divider = (150 / 0.97);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '98':
+            divider = (150 / 0.98);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         case '99':
+            divider = (150 / 0.99);
+            fxn = divider.toFixed(2);
+            calculated(fxn);
+            break;
+         default:
+            console.log('please give the value');
+      }
    }
-  }
 };
 
 function calculated(number) {
@@ -107,9 +147,9 @@ function removeSpace(e) {
    const filtering = splitingValue.join("").toString();
    const flowting = ((parseFloat(filtering)) * 0.2) * 365;
    savingsYear = flowting;
-   if(savingsYear){
+   if (savingsYear) {
       resultOutput.innerHTML = `$${savingsYear.toFixed(4)}`;
-   }else{
+   } else {
       resultOutput.innerHTML = 0;
    }
 }
